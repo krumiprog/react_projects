@@ -1,0 +1,123 @@
+:root {
+  --white: #fff;
+  --shadow: rgba(0, 0, 0, 0.5);
+  --color-one: #0a1e3b;
+  --color-two: #9a348e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--color-one);
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.item {
+  position: relative;
+  width: 350px;
+  height: 450px;
+  background: transparent;
+  perspective: 1500px;
+  cursor: pointer;
+}
+
+.item-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px var(--shadow);
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.item:hover .item-inner {
+  transform: rotateY(180deg);
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-front,
+.item-back {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.item-back {
+  background: var(--color-two);
+  color: var(--white);
+  padding: 20px;
+  transform: rotateY(180deg);
+}
+
+.item-front h3 {
+  position: absolute;
+  top: 20px;
+  color: var(--white);
+  text-shadow: 0 3px 5px var(--shadow);
+}
+
+button {
+  padding: 5px;
+  color: var(--white);
+  background: transparent;
+  outline: none;
+  border: 2px solid var(--white);
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+button:hover {
+  color: var(--color-two);
+  background: var(--white);
+}
+
+h1 {
+  color: var(--white);
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
